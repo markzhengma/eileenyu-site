@@ -7,7 +7,7 @@ import {
   useParams
 } from "react-router-dom";
 // import axios from 'axios';
-import { CookiesProvider } from 'react-cookie';
+// import { CookiesProvider } from 'react-cookie';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -65,26 +65,24 @@ export default class App extends Component{
       )
     }
     return (
-      <CookiesProvider>
-        <Router>
-          <div className="App">
-            <Header
-              scrollToElement = {this.scrollToElement}
-            />
-            <Switch>
-              <Route exact path="/">
-                <Home
-                  scrollToElement = {this.scrollToElement}
-                />
-              </Route>
-              <Route path="/program/:id">
-                <ProgramPage />
-              </Route>
-            </Switch>
-            <Footer/>
-          </div>
-        </Router>
-      </CookiesProvider>
+      <Router>
+        <div className="App">
+          <Header
+            scrollToElement = {this.scrollToElement}
+          />
+          <Switch>
+            <Route exact path="/">
+              <Home
+                scrollToElement = {this.scrollToElement}
+              />
+            </Route>
+            <Route path="/program/:id">
+              <ProgramPage />
+            </Route>
+          </Switch>
+          <Footer/>
+        </div>
+      </Router>
       
     );
   }
