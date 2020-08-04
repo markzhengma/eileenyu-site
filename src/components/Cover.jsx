@@ -53,7 +53,7 @@ export default class Cover extends Component {
                 <Col className = "flex-hc-vc">
                   <Button 
                     variant="danger"
-                    onClick = {() => this.props.scrollToElement('chapter-spacer')}
+                    onClick = {() => this.props.scrollToElement('program-spacer')}
                   >
                     Go
                   </Button>
@@ -85,7 +85,7 @@ export default class Cover extends Component {
         </Carousel>
         <Button 
           id = "scroll-btn"
-          onClick = {() => this.props.scrollToElement('chapter-spacer')}
+          onClick = {() => this.props.scrollToElement('program-spacer')}
         >
           Scroll
         </Button>

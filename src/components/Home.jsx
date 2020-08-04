@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Element } from 'react-scroll';
 
-import ChaptList from './ChaptList';
+import ProgramList from './ProgramList';
 import Cover from './Cover';
 
 export default class Home extends Component {
@@ -12,9 +12,9 @@ export default class Home extends Component {
         <Cover
           scrollToElement = {this.props.scrollToElement}
         />
-        <Element className="spacer chapter-spacer" name="chapter-spacer" />
+        <Element className="spacer program-spacer" name="program-spacer" />
         <div className="title title-section">Free Programs</div>
-        <ChaptList/>
+        <ProgramList/>
       </div>
     )
   }

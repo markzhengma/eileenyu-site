@@ -96,7 +96,7 @@
   background-position: center;
 }
 
-.chapter-list {
+.program-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -104,7 +104,7 @@
   width: 100%;
 }
 
-.chapter-single {
+.program-single {
   position: relative;
   width: 100%;
   max-width: 480px;
@@ -113,11 +113,11 @@
   box-shadow: 1px 1px 6px grey;
 }
 
-.chapter-cover {
+.program-cover {
   width: 100%;
 }
 
-.chapter-overlay {
+.program-overlay {
   position: absolute;
   top: -60px;
   height: calc(100% + 60px);
@@ -131,7 +131,7 @@
   cursor: pointer;
 }
 
-.chapter-title {
+.program-title {
   font-size: 24px;
   font-weight: bold;
 }
@@ -143,14 +143,14 @@
   border-radius: 2px;
 }
 
-.chapter-info {
+.program-info {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.chapter-detail {
+.program-detail {
   height: 60px;
   margin-top: 10px;
   overflow: scroll;
@@ -158,7 +158,7 @@
 
 #footer-navbar {
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: auto;
   max-width: 1140px;
   width: 100%;
@@ -204,19 +204,19 @@
     font-size: 16px;
   }
 
-  .chapter-list {
+  .program-list {
     width: 100%;
   }
-  .chapter-single {
+  .program-single {
     max-width: 300px;
   }
 
-  .chapter-overlay {
+  .program-overlay {
     top: 0px;
     transition: top 0.1s linear;
   }
   
-  .chapter-overlay:hover {
+  .program-overlay:hover {
     top: -60px;
   }
 
