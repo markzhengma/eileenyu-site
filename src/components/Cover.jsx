@@ -24,8 +24,8 @@ export default class Cover extends Component {
           <Carousel.Item>
             <Container className="flex-vc" id="cover-1">
               <Row>
-                <Col className="title title-overlay text-l">
-                  Free workout programs. Stay fresh!
+                <Col className="title title-overlay text-c">
+                  我收集整理了全部的<br/>免费健身项目
                 </Col>
               </Row>
               <Row>
@@ -34,28 +34,26 @@ export default class Cover extends Component {
                     variant="danger"
                     onClick={this.handleSubscribe}
                   >
-                    Get Started
+                    关注我
                   </Button>
                 </Col>
-                <Col/>
               </Row>
             </Container>
           </Carousel.Item>
           <Carousel.Item>
             <Container className="flex-vc" id="cover-2">
               <Row>
-                <Col className="title title-overlay text-r">
-                  You're welcome follow my workout calendars.
+                <Col className="title title-overlay text-c">
+                  欢迎来看我设计的<br/>训练计划哟
                 </Col>
               </Row>
               <Row>
-                <Col/>
                 <Col className = "flex-hc-vc">
                   <Button 
                     variant="danger"
                     onClick = {() => this.props.scrollToElement('program-spacer')}
                   >
-                    Go
+                    开始训练
                   </Button>
                 </Col>
               </Row>
@@ -65,7 +63,7 @@ export default class Cover extends Component {
             <Container className="flex-vc" id="cover-3">
               <Row>
                 <Col className="title title-overlay text-c">
-                  Healthy/Cheat-meal recipes for everyone!
+                  这里也有很多好吃的<br/>健康餐的灵感呢
                 </Col>
               </Row>
               <Row>
@@ -75,7 +73,7 @@ export default class Cover extends Component {
                     variant="danger"
                     onClick={this.handleRecipe}
                   >
-                    More
+                    开吃
                   </Button>
                 </Col>
                 <Col/>
@@ -87,7 +85,7 @@ export default class Cover extends Component {
           id = "scroll-btn"
           onClick = {() => this.props.scrollToElement('program-spacer')}
         >
-          Scroll
+          更多
         </Button>
       </div>
     )

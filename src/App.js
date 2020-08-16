@@ -9,10 +9,13 @@ import {
 // import axios from 'axios';
 // import { CookiesProvider } from 'react-cookie';
 
-import Footer from './components/Footer';
+import Contact from './components/Contact';
 import Header from './components/Header';
 import Home from './components/Home';
 import ProgramSingle from './components/ProgramSingle';
+import Construction from './components/Construction';
+
+import ScrollToTop from './utils/ScrollToTop';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -59,29 +62,31 @@ export default class App extends Component{
   render() {
     function ProgramPage(){
       let id = useParams().id;
-      console.log(id)
       return (
         <ProgramSingle id = { id }/>
       )
     }
     return (
       <Router>
-        <div className="App">
-          <Header
-            scrollToElement = {this.scrollToElement}
-          />
-          <Switch>
-            <Route exact path="/">
-              <Home
-                scrollToElement = {this.scrollToElement}
-              />
-            </Route>
-            <Route path="/program/:id">
-              <ProgramPage />
-            </Route>
-          </Switch>
-          <Footer/>
-        </div>
+        <ScrollToTop>
+          <div className="App">
+            <Header
+              scrollToElement = {this.scrollToElement}
+            />
+            <Switch>
+              <Route exact path="/">
+                <Home
+                  scrollToElement = {this.scrollToElement}
+                />
+              </Route>
+              <Route path="/program/:id">
+                <ProgramPage />
+              </Route>
+              <Route component={Construction} />
+            </Switch>
+            <Contact/>
+          </div>
+        </ScrollToTop>
       </Router>
       
     );

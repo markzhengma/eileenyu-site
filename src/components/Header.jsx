@@ -12,10 +12,10 @@ export default class Header extends Component {
         <Navbar.Collapse id="nav-bar">
           <Nav>
             <Nav.Link href="/">
-              Home
+              主页
             </Nav.Link>
-            <Nav.Link href="/program/1">
-              Free Workout Programs
+            <Nav.Link href="/program/calendar_20200814">
+              训练计划
             </Nav.Link>
             {/* <Nav.Link onClick = {() => this.props.scrollToElement('cover-spacer')}>
               Home
@@ -24,7 +24,7 @@ export default class Header extends Component {
               Free Workout Programs
             </Nav.Link> */}
             <Nav.Link onClick = {() => this.props.scrollToElement('contact-spacer')}>
-              Contact
+              联系我
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

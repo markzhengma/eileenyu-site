@@ -5,10 +5,6 @@
   min-height: 100vh;
 }
 
-#nav-bar {
-  justify-content: flex-end;
-}
-
 .flex-hc-vc {
   display: flex;
   flex-direction: column;
@@ -22,9 +18,17 @@
   justify-content: center;
 }
 
+/* navigation */
+
+#nav-bar {
+  justify-content: flex-end;
+}
+
 .spacer{
   height: 56px;
 }
+
+/* home page cover list section */
 
 #cover-list {
   position: relative;
@@ -33,7 +37,7 @@
 
 #scroll-btn {
   position: absolute;
-  bottom: 6rem;
+  bottom: 6vh;
   width: 60px;
   left: calc(50% - 30px);
 }
@@ -54,6 +58,7 @@
   color: white;
   text-shadow: 1px 1px 4px black;
   font-size: 24px;
+  font-weight: 800;
   margin: 0 40px;
 }
 
@@ -96,6 +101,8 @@
   background-position: center;
 }
 
+/* home page program list */
+
 .program-list {
   display: flex;
   justify-content: center;
@@ -104,9 +111,9 @@
   width: 100%;
 }
 
-.program-single {
+.program-list-single {
   position: relative;
-  width: 100%;
+  width: 95%;
   max-width: 480px;
   margin: 10px;
   overflow: hidden;
@@ -156,6 +163,8 @@
   overflow: scroll;
 }
 
+/* contact section */
+
 #footer-navbar {
   flex-direction: column;
   align-items: center;
@@ -166,6 +175,80 @@
 
 .iconfont {
   font-size: 24px;
+}
+
+.icon {
+  height: 80px;
+  width: 80px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 5px;
+}
+
+.icon-btn {
+  height: 50px;
+  width: 80px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white;
+  margin: 10px;
+  border-radius: 4px;
+  border: solid white 4px;
+}
+
+.icon-btn:hover{
+  background-color: grey;
+  border-color: grey;
+}
+
+.smicon-link {
+  padding: 2px;
+  border-radius: 6px 6px 0 0;
+}
+
+.smicon-link-selected {
+  background-color: grey;
+}
+
+.icon-small {
+  height: 20px;
+  width: 20px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.beachchair {
+  background-image: url("https://static.markzhengma.com/icon/beachchair.png");
+}
+.icon-email {
+  background-image: url("https://static.markzhengma.com/icon/email.png");
+}
+.icon-youtubesmall {
+  background-image: url("https://static.markzhengma.com/icon/youtubesmall.png");
+}
+.icon-youtube {
+  background-image: url("https://static.markzhengma.com/icon/youtube.png");
+}
+.icon-bili {
+  background-image: url("https://static.markzhengma.com/icon/bili.png");
+}
+.icon-bilismall {
+  background-image: url("https://static.markzhengma.com/icon/bilismall.png");
+}
+.icon-instagram {
+  background-image: url("https://static.markzhengma.com/icon/instagram.png");
+}
+.icon-weibo {
+  background-image: url("https://static.markzhengma.com/icon/weibo.png");
+}
+.icon-xigua {
+  background-image: url("https://static.markzhengma.com/icon/xigua.png");
+}
+.icon-wechat {
+  background-image: url("https://static.markzhengma.com/icon/wechat.png");
 }
 
 #sm-display {
@@ -194,8 +277,127 @@
   width: 100px;
 }
 
-.program-page {
+/* program single page */
+
+.program-single-page {
   min-height: 80vh;
+}
+
+.program-single-banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  width: 100%;
+  height: 180px;
+  color: white;
+  padding: 10px;
+  text-shadow: 1px 1px 4px black;
+}
+
+.program-single-calendar {
+  /* display: flex;
+  flex-direction: column; */
+  margin: 20px 10px;
+  padding: 10px;
+  max-width: 1200px;
+  /* background-color: darkgray; */
+}
+
+.program-single-day {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.program-single-day-title {
+  color: khaki;
+  padding: 5px;
+  margin-left: -1px;
+  font-weight: 600;
+}
+
+.program-single-day-detail {
+  font-weight: 800;
+  padding: 5px;
+}
+
+.program-single-day-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.program-single-box {
+  width: 80vw;
+  max-width: 360px;
+  min-width: 240px;
+  height: 45vw;
+  max-height: 202.5px;
+  min-height: 135px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px;
+  box-shadow: 1px 1px 4px black;
+  color: white;
+  text-shadow: 1px 1px 4px black;
+
+  display: flex;
+  align-items: flex-end;
+
+  position: relative;
+}
+
+.program-single-box-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+.program-single-box-overlay:hover{
+  opacity: 1;
+} */
+
+.program-single-box-title-container {
+  /* height: 100%; */
+  width: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7));
+  font-size: 16px;
+  padding: 6px;
+  text-align: end;
+  /* opacity: 0;
+  transition: opacity 0.2s; */
+}
+
+/* .program-single-box-title-container:hover {
+  opacity: 1;
+} */
+
+/* construction page */
+
+.construction-page {
+  width: 100vw;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative
+}
+
+#construction-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 }
 
 
@@ -207,7 +409,7 @@
   .program-list {
     width: 100%;
   }
-  .program-single {
+  .program-list-single {
     max-width: 300px;
   }
 

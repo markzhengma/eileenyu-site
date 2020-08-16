@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Element } from 'react-scroll';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 
-export default class Footer extends Component {
+export default class Contact extends Component {
   constructor() {
     super();
 
@@ -11,50 +11,58 @@ export default class Footer extends Component {
       selectedData: {
         image: 'https://static.markzhengma.com/cover_mail.jpg',
         url: 'mailto:comeoneileen12@163.com',
-        btnTxt: 'Send Email',
+        btnTxt: '发邮件给我们',
+        bg_color: '#f8f9fa',
         disabled: false
       },
       smData: {
         mail: {
           image: 'https://static.markzhengma.com/cover_mail.jpg',
           url: 'mailto:comeoneileen12@163.com',
-          btnTxt: 'Send Email',
+          btnTxt: '发邮件给我们',
+          bg_color: '#f8f9fa',
           disabled: false
         },
         yt: {
           image: 'https://static.markzhengma.com/cover_yt.jpg',
           url: 'https://www.youtube.com/c/EileenYu?sub_confirmation=1',
-          btnTxt: 'To My YouTube Channel',
+          btnTxt: '打开YouTube',
+          bg_color: '#EDC3C4',
           disabled: false
         },
         bili: {
           image: 'https://static.markzhengma.com/cover_bili.jpg',
           url: 'https://space.bilibili.com/344135105',
-          btnTxt: 'To My Bilibili Channel',
+          btnTxt: '打开Bilibili',
+          bg_color: '#E4E5D9',
           disabled: false
         },
         ins: {
           image: 'https://static.markzhengma.com/cover_ins.jpg',
           url: 'https://www.instagram.com/eileenismart',
-          btnTxt: 'To My Instagram Channel',
+          btnTxt: '打开Instagram',
+          bg_color: '#F6F0DA',
           disabled: false
         },
         wb: {
           image: 'https://static.markzhengma.com/cover_wb.jpg',
           url: 'https://www.weibo.com/p/1005052913443311/home',
-          btnTxt: 'To My Weibo Page',
+          btnTxt: '打开微博',
+          bg_color: '#EBE0D7',
           disabled: false
         },
         xigua: {
           image: 'https://static.markzhengma.com/cover_xigua.jpg',
           url: 'https://www.ixigua.com/home/3474099493142808',
-          btnTxt: 'To My Xigua Channel',
+          btnTxt: '打开西瓜视频',
+          bg_color: '#F8E8EB',
           disabled: false
         },
         wechat: {
           image: 'https://static.markzhengma.com/cover_wechat.jpg',
           url: '',
-          btnTxt: 'Scan QR Code for my Wechat Articles',
+          btnTxt: '扫描二维码看微信公众号',
+          bg_color: '#FFF6D7',
           disabled: true
         }
       }
@@ -85,7 +93,12 @@ export default class Footer extends Component {
     return (
       <div>
         <Element className="spacer contact-spacer" name="contact-spacer" />
-        <div className="title title-section">Contact</div>
+        <div 
+          className="title title-section"
+          style={{paddingLeft: '16px'}}
+        >
+          联系我
+        </div>
         <Navbar bg="light">
           <Navbar.Collapse id="footer-navbar">
             <div>
@@ -113,26 +126,54 @@ export default class Footer extends Component {
                 <Nav.Link href="https://www.ixigua.com/home/3474099493142808" target='_blank' rel="noopener noreferrer">
                   <span className="iconfont icon-xiguashipin"></span>
                 </Nav.Link> */}
-                <Nav.Link onMouseEnter={()=>this.selectSM('mail')}>
-                  <span className="iconfont icon-email"></span>
+                <Nav.Link
+                  className='smicon-link'
+                  onMouseEnter={()=>this.selectSM('mail')}
+                  style={{backgroundColor: this.state.selectedIcon === 'mail' ? this.state.selectedData.bg_color : ''}}
+                >
+                  <div className="icon-small icon-email"></div>
                 </Nav.Link>
-                <Nav.Link onMouseEnter={()=>this.selectSM('yt')}>
-                  <span className="iconfont icon-youtube"></span>
+                <Nav.Link
+                  className="smicon-link"
+                  onMouseEnter={()=>this.selectSM('yt')}
+                  style={{backgroundColor: this.state.selectedIcon === 'yt' ? this.state.selectedData.bg_color : ''}}
+                >
+                  <div className="icon-small icon-youtubesmall"></div>
                 </Nav.Link>
-                <Nav.Link onMouseEnter={()=>this.selectSM('bili')}>
-                  <span className="iconfont icon-bilibili-fill"></span>
+                <Nav.Link
+                  className="smicon-link"
+                  onMouseEnter={()=>this.selectSM('bili')}
+                  style={{backgroundColor: this.state.selectedIcon === 'bili' ? this.state.selectedData.bg_color : ''}}
+                >
+                  <div className="icon-small icon-bilismall"></div>
                 </Nav.Link>
-                <Nav.Link onMouseEnter={()=>this.selectSM('ins')}>
-                  <span className="iconfont icon-instagram"></span>
+                <Nav.Link
+                  className="smicon-link"
+                  onMouseEnter={()=>this.selectSM('ins')}
+                  style={{backgroundColor: this.state.selectedIcon === 'ins' ? this.state.selectedData.bg_color : ''}}
+                >
+                  <div className="icon-small icon-instagram"></div>
                 </Nav.Link>
-                <Nav.Link onMouseEnter={()=>this.selectSM('wb')}>
-                  <span className="iconfont icon-weibo"></span>
+                <Nav.Link
+                  className="smicon-link"
+                  onMouseEnter={()=>this.selectSM('wb')}
+                  style={{backgroundColor: this.state.selectedIcon === 'wb' ? this.state.selectedData.bg_color : ''}}
+                >
+                  <div className="icon-small icon-weibo"></div>
                 </Nav.Link>
-                <Nav.Link onMouseEnter={()=>this.selectSM('xigua')}>
-                  <span className="iconfont icon-xiguashipin"></span>
+                <Nav.Link
+                  className="smicon-link"
+                  onMouseEnter={()=>this.selectSM('xigua')}
+                  style={{backgroundColor: this.state.selectedIcon === 'xigua' ? this.state.selectedData.bg_color : ''}}
+                >
+                  <div className="icon-small icon-xigua"></div>
                 </Nav.Link>
-                <Nav.Link onMouseEnter={()=>this.selectSM('wechat')}>
-                  <span className="iconfont icon-wechat"></span>
+                <Nav.Link
+                  className="smicon-link"
+                  onMouseEnter={()=>this.selectSM('wechat')}
+                  style={{backgroundColor: this.state.selectedIcon === 'wechat' ? this.state.selectedData.bg_color : ''}}
+                >
+                  <div className="icon-small icon-wechat"></div>
                 </Nav.Link>
               </Nav>
               <div id="sm-display">

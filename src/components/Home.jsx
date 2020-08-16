@@ -13,7 +13,6 @@ export default class Home extends Component {
           scrollToElement = {this.props.scrollToElement}
         />
         <Element className="spacer program-spacer" name="program-spacer" />
-        <div className="title title-section">Free Programs</div>
         <ProgramList/>
       </div>
     )
