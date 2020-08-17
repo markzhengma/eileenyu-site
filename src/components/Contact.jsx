@@ -11,7 +11,8 @@ export default class Contact extends Component {
       selectedData: {
         image: 'https://static.markzhengma.com/cover_mail.jpg',
         url: 'mailto:comeoneileen12@163.com',
-        btnTxt: '发邮件给我们',
+        btnTxt: '发邮件给我',
+        btn_bg: '',
         bg_color: '#f8f9fa',
         disabled: false
       },
@@ -20,6 +21,7 @@ export default class Contact extends Component {
           image: 'https://static.markzhengma.com/cover_mail.jpg',
           url: 'mailto:comeoneileen12@163.com',
           btnTxt: '发邮件给我们',
+          btn_bg: '',
           bg_color: '#f8f9fa',
           disabled: false
         },
@@ -27,6 +29,7 @@ export default class Contact extends Component {
           image: 'https://static.markzhengma.com/cover_yt.jpg',
           url: 'https://www.youtube.com/c/EileenYu?sub_confirmation=1',
           btnTxt: '打开YouTube',
+          btn_bg: '',
           bg_color: '#EDC3C4',
           disabled: false
         },
@@ -34,6 +37,7 @@ export default class Contact extends Component {
           image: 'https://static.markzhengma.com/cover_bili.jpg',
           url: 'https://space.bilibili.com/344135105',
           btnTxt: '打开Bilibili',
+          btn_bg: '',
           bg_color: '#E4E5D9',
           disabled: false
         },
@@ -41,6 +45,7 @@ export default class Contact extends Component {
           image: 'https://static.markzhengma.com/cover_ins.jpg',
           url: 'https://www.instagram.com/eileenismart',
           btnTxt: '打开Instagram',
+          btn_bg: '',
           bg_color: '#F6F0DA',
           disabled: false
         },
@@ -48,6 +53,7 @@ export default class Contact extends Component {
           image: 'https://static.markzhengma.com/cover_wb.jpg',
           url: 'https://www.weibo.com/p/1005052913443311/home',
           btnTxt: '打开微博',
+          btn_bg: '',
           bg_color: '#EBE0D7',
           disabled: false
         },
@@ -55,6 +61,7 @@ export default class Contact extends Component {
           image: 'https://static.markzhengma.com/cover_xigua.jpg',
           url: 'https://www.ixigua.com/home/3474099493142808',
           btnTxt: '打开西瓜视频',
+          btn_bg: '',
           bg_color: '#F8E8EB',
           disabled: false
         },
@@ -62,6 +69,7 @@ export default class Contact extends Component {
           image: 'https://static.markzhengma.com/cover_wechat.jpg',
           url: '',
           btnTxt: '扫描二维码看微信公众号',
+          btn_bg: '',
           bg_color: '#FFF6D7',
           disabled: true
         }

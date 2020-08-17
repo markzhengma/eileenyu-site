@@ -1,3 +1,30 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .App {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: small;
@@ -38,8 +65,28 @@
 #scroll-btn {
   position: absolute;
   bottom: 6vh;
-  width: 60px;
   left: calc(50% - 30px);
+  width: 60px;
+  padding: 2px;
+
+  color: white;
+  font-weight: 600;
+
+  background-color: rgba(0,0,0,0.2);
+  transition: background-color 0.2s;
+
+  border-top: white solid 2px;
+  border-radius: 0 0 4px 4px;
+}
+
+#scroll-btn:hover {
+  background-color:rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+#icon-scroll {
+  background-image: url("https://static.markzhengma.com/icon/scroll-white.png");
+  animation: blink 3s infinite;
 }
 
 .title {
@@ -77,6 +124,8 @@
 #cover-1 {
   background-image: url('https://static.markzhengma.com/eileen-cover.jpg');
   height: calc(100vh - 56px);
+  transition: height 0.5s;
+  min-height: 305px;
   max-width: 800px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -86,6 +135,8 @@
 #cover-2 {
   background-image: url('https://static.markzhengma.com/eileen-cover2.jpg');
   height: calc(100vh - 56px);
+  transition: height 0.5s;
+  min-height: 305px;
   max-width: 800px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -95,6 +146,7 @@
 #cover-3 {
   background-image: url('https://static.markzhengma.com/meal.jpg');
   height: calc(100vh - 56px);
+  transition: height 0.5s;
   max-width: 800px;
   background-size: cover;
   background-repeat: no-repeat;
