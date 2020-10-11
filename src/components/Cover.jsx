@@ -20,6 +20,7 @@ export default class Cover extends Component {
       <div id = "cover-list">
         <Carousel 
           indicators={false}
+          style={{backgroundColor: 'grey'}}
         >
           <Carousel.Item>
             <Container className="flex-vc" id="cover-1">

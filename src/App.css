@@ -26,7 +26,7 @@
 }
 
 .App {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial;
   font-size: small;
   background-color: #f8f9fa;
   min-height: 100vh;
@@ -302,6 +302,9 @@
 .icon-wechat {
   background-image: url("https://static.markzhengma.com/icon/wechat.png");
 }
+.icon-calendar {
+  background-image: url("https://static.markzhengma.com/icon/calendar.png");
+}
 
 #sm-display {
   width: 100%;
@@ -333,12 +336,14 @@
 
 .program-single-page {
   min-height: 80vh;
+  font-style: italic;
 }
 
 .program-single-banner {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: grey;
   
   width: 100%;
   height: 180px;
@@ -359,19 +364,31 @@
 .program-single-day {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.program-single-day-title-block {
+  background-color: #F8F9FA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.program-single-day-time {
+  color: rgb(145, 145, 145);
 }
 
 .program-single-day-title {
   color: khaki;
   padding: 5px;
-  margin-left: -1px;
   font-weight: 600;
+  display: flex;
 }
 
 .program-single-day-detail {
   font-weight: 800;
-  padding: 5px;
+  padding: 10px;
 }
 
 .program-single-day-list {
@@ -394,6 +411,7 @@
   background-repeat: no-repeat;
   margin: 5px;
   box-shadow: 1px 1px 4px black;
+  border-radius: 4px;
   color: white;
   text-shadow: 1px 1px 4px black;
 
@@ -408,6 +426,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.5);
+  border-radius: 4px;
 
   display: flex;
   flex-direction: row;
