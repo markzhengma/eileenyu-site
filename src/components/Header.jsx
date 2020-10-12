@@ -6,7 +6,7 @@ export default class Header extends Component {
   render() {
     return (
       <Navbar bg="light" fixed="top">
-        <Navbar.Brand href="/">
+        <Navbar.Brand id="logo" href="/">
           Eileen Yu
         </Navbar.Brand>
         <Navbar.Collapse id="nav-bar">

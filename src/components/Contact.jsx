@@ -99,18 +99,17 @@ export default class Contact extends Component {
     // );
 
     return (
-      <div>
+      <div className="flex-vc">
         <Element className="spacer contact-spacer" name="contact-spacer" />
         <div 
           className="title title-section"
-          style={{paddingLeft: '16px'}}
         >
           联系我
         </div>
-        <Navbar bg="light">
-          <Navbar.Collapse id="footer-navbar">
+        <Navbar id = "footer-navbar">
+          <Navbar.Collapse id="footer-navbar-collapse">
             <div>
-              <Nav>
+              <Nav id = "footer-navbar-links">
                 {/* <Nav.Link href="mailto:comeoneileen12@163.com">
                   <span className="iconfont icon-email"></span>
                 </Nav.Link>
@@ -184,7 +183,10 @@ export default class Contact extends Component {
                   <div className="icon-small icon-wechat"></div>
                 </Nav.Link>
               </Nav>
-              <div id="sm-display">
+              <div 
+                id="sm-display"
+                style = {{backgroundColor: this.state.selectedData.bg_color}}
+              >
                 {/* {this.state.selectedIcon} */}
                 <img 
                   id = 'sm-display-img'

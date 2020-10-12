@@ -23,38 +23,39 @@ export default class ProgramList extends Component {
   }
   render() {
     return (
-      <div className="flex-hc-vc">
+      <div className="flex-vc">
         <div 
           className="title title-section"
-          style={{paddingLeft: '16px'}}
         >
           我的训练计划
         </div>
-        <div className="program-list">
-          { this.state.programData.map(program => {
-            return(
-              <Link to={`/program/${program.id}`} key={program.id}>
-                <div className="program-list-single" key={ program.id }>
-                  <div className="program-overlay">
-                    <b className="program-title">
-                      { program.title }{' '}
-                      { program.isnew ? <Badge bsPrefix="badge-new">New</Badge> : '' }
-                    </b>
-                    <div className="program-info">
-                      <b>Release: { program.release }</b>
+        <div className = "flex-hc-vc" style={{width: '100%'}}>
+          <div className="program-list">
+            { this.state.programData.map(program => {
+              return(
+                <Link to={`/program/${program.id}`} key={program.id}>
+                  <div className="program-list-single" key={ program.id }>
+                    <div className="program-overlay">
+                      <b className="program-title">
+                        { program.title }{' '}
+                        { program.isnew ? <Badge bsPrefix="badge-new">New</Badge> : '' }
+                      </b>
+                      <div className="program-info">
+                        <b>Release: { program.release }</b>
+                      </div>
+                      <div className="program-info">
+                        <b>{ program.time_pday } min x { program.day_cnt } days</b>
+                      </div>
+                      <div className="program-detail">
+                        { program.detail }
+                      </div>
                     </div>
-                    <div className="program-info">
-                      <b>{ program.time_pday } min x { program.day_cnt } days</b>
-                    </div>
-                    <div className="program-detail">
-                      { program.detail }
-                    </div>
+                    <img className="program-cover" src={ program.img } alt="cover"/>
                   </div>
-                  <img className="program-cover" src={ program.img } alt="cover"/>
-                </div>
-              </Link>
-            )
-          })}
+                </Link>
+              )
+            })}
+          </div>
         </div>
       </div>
     )
