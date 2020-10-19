@@ -9,7 +9,7 @@ export default class ProgramList extends Component {
     this.state = {
       programData: [
         {
-          id: 'calendar_20200814',
+          cid: 'c20200814',
           title: '一周在家训练计划',
           release: '2020-08-14',
           isnew: true,
@@ -33,7 +33,7 @@ export default class ProgramList extends Component {
           <div className="program-list">
             { this.state.programData.map(program => {
               return(
-                <Link to={`/program/${program.id}`} key={program.id}>
+                <Link to={`/program/${program.cid}`} key={program.cid}>
                   <div className="program-list-single" key={ program.id }>
                     <div className="program-overlay">
                       <b className="program-title">

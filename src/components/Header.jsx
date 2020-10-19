@@ -14,7 +14,7 @@ export default class Header extends Component {
             <Nav.Link href="/">
               主页
             </Nav.Link>
-            <Nav.Link href="/program/calendar_20200814">
+            <Nav.Link href="/program/c20200814">
               训练计划
             </Nav.Link>
             {/* <Nav.Link onClick = {() => this.props.scrollToElement('cover-spacer')}>
