@@ -24,7 +24,7 @@ export default class ProgramList extends Component {
   };
 
   async componentDidMount() {
-    const programList = await axios.get('http://192.168.1.18:7001/calendar/all');
+    const programList = await axios.get('https://api.eileen-yu.com/calendar/all');
 
     if(!programList && programList.data.code !== 200) {
       this.setState({

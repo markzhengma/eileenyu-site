@@ -409,7 +409,7 @@ export default class ProgramSingle extends Component {
   };
 
   async componentDidMount(){
-    const programRes = await axios.get(`http://192.168.1.18:7001/calendar/single/${this.props.id}`);
+    const programRes = await axios.get(`https://api.eileen-yu.com/calendar/single/${this.props.id}`);
     const programData = programRes.data.data;
     
     this.setState({
@@ -451,7 +451,7 @@ export default class ProgramSingle extends Component {
         />
         <div 
           className="program-single-banner flex-hc-vc"
-          style={{backgroundImage: `url(${this.state.img})`}}
+          // style={{backgroundImage: `url(${this.state.img})`}}
         >
           <div className="program-single-infobox flex-hc-vc">
             <b className="program-single-title">
@@ -520,23 +520,44 @@ export default class ProgramSingle extends Component {
                             >
                               <div 
                                 className="program-single-box-overlay"
-                                style={{ display: day.day+program.vid === this.state.selectedProgramId ? "flex" : "none"}}
+                                style={{ display: day.day+program.vid === this.state.selectedProgramId 
+                                  ? "flex" 
+                                  : "none"
+                                }}
                               >
                                 <a 
                                   href={program.url_yt} 
                                   target="_blank"
                                   rel="noopener noreferrer"
                                 >
-                                  <div className="icon-btn icon-youtube"></div>
+                                  <div 
+                                    className="icon-btn icon-youtube"
+                                  />
                                 </a>
                                 {program.url_bili 
                                   ? <a 
-                                    href={program.url_bili} 
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                  >
-                                    <div className="icon-btn icon-bili"></div>
-                                  </a>
+                                      href={program.url_bili} 
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      <div 
+                                        className="icon-btn icon-bili"
+                                      />
+                                    </a>
+                                  : ""
+                                }
+                                {program.url_wx 
+                                  ? !program.url_bili
+                                    ? <a 
+                                        href={program.url_wx} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        <div 
+                                          className="icon-btn icon-wechat"
+                                        />
+                                      </a>
+                                    : ""
                                   : ""
                                 }
                               </div>
