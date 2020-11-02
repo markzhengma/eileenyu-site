@@ -27,7 +27,7 @@
 
 .App {
   font-family: Arial;
-  font-size: small;
+  font-size: 18px;
   background-color: #f8f9fa;
   min-height: 100vh;
 }
@@ -58,6 +58,41 @@
 #logo{
   color: grey;
   font-weight: 600;
+}
+
+/* homepage cover section */
+
+#home-cover {
+  height: calc(100vh - 56px);
+  min-height: 600px;
+  max-height: 800px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+#home-cover-title {
+  height: calc(100vh - 56px);
+  width: 100%;
+  position: absolute;
+  background-color: rgba(248, 249, 250, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: grey;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+#home-cover-img {
+  height: 100%;
+  width: 100%;
+  background-image: url('https://static.markzhengma.com/eileen-cover.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* home page cover list section */
@@ -162,6 +197,74 @@
 /* home page program list */
 
 .program-list {
+  max-width: 1140px;
+  width: 90%;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 4px 4px 10px rgb(209, 209, 209);
+}
+
+.program-list-single {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.program-list-single-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0,0,0,0);
+  transition: background-color 0.2s;
+}
+
+.program-list-single-overlay:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.program-list-single-cover {
+  width: 100%;
+  border-radius: 6px;
+  /* max-width: 450px; */
+}
+
+.program-list-single-info {
+  padding: 30px 10px 10px 10px;
+  color: grey;
+}
+
+.program-list-single-info h3 {
+  width: 100%;
+  font-weight: 600;
+  border-bottom: rgb(214, 214, 214) solid 2px;
+}
+
+.badge-new{
+  background-color: #28a745;
+  color: white;
+  padding: 1px 3px;
+  font-size: small;
+  border-radius: 2px;
+}
+
+.program-list-single-info p {
+  margin-top: 6px;
+}
+
+.program-list-single-span {
+  font-size: small;
+  font-weight: 600;
+  width: 100%;
+  color: rgb(180, 180, 180);
+}
+
+
+
+/* .program-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -222,7 +325,7 @@
   height: 60px;
   margin-top: 10px;
   overflow: scroll;
-}
+} */
 
 /* contact section */
 
@@ -283,9 +386,16 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+.icon-mid {
+  height: 24px;
+  width: 24px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
-.beachchair {
-  background-image: url("https://static.markzhengma.com/icon/beachchair.png");
+.relax {
+  background-image: url("https://static.markzhengma.com/icon/relax.png");
 }
 .icon-email {
   background-image: url("https://static.markzhengma.com/icon/email.png");
@@ -354,25 +464,53 @@
 .program-single-page {
   min-height: 80vh;
   font-style: italic;
+
+  /* test */
+  background-color: #F9F8E6;
 }
 
-.program-single-banner {
+.program-single-banner-bg {
+  width: 100%;
+  height: 300px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: grey;
-  
+
+  filter: blur(16px);
+  -webkit-filter: blur(16px);
+}
+
+.program-single-banner {
   width: 100%;
-  height: 180px;
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  top: 56px;
+
   color: white;
+  /* padding: 10px; */
+}
+
+.program-single-infobox {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
   padding: 10px;
-  text-shadow: 1px 1px 4px black;
+}
+
+.program-single-title {
+  font-size: 34px;
+  font-weight: 600;
+  border-bottom: solid white 2px;
 }
 
 .program-single-calendar {
   /* display: flex;
   flex-direction: column; */
-  margin: 20px 10px;
+  padding: 20px 10px;
   padding: 10px;
   max-width: 1200px;
   /* background-color: darkgray; */
@@ -382,37 +520,50 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;
+
+  /* test */
+  border-left: #89937A solid 2px;
 }
 
 .program-single-day-title-block {
-  background-color: #F8F9FA;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+
+  /* test */
+  background-color: #89937A;
 }
 
 .program-single-day-time {
-  color: rgb(145, 145, 145);
+  color: #FF931F;
+  padding: 10px 20px;
+  /* background-color: #fa6f6f; */
 }
 
 .program-single-day-title {
-  color: khaki;
-  padding: 5px;
-  font-weight: 600;
+  /* color: khaki; */
+  padding: 5px 15px;
   display: flex;
+  align-items: center;
+  color: #F8F9FA;
+}
+
+.program-single-day-title-txt {
+  font-weight: 600;
 }
 
 .program-single-day-detail {
   font-weight: 800;
-  padding: 10px;
+  padding-left: 15px;
 }
 
 .program-single-day-list {
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
   padding: 5px;
+  min-height: 200px;
 }
 
 .program-single-box {
@@ -436,6 +587,10 @@
   align-items: flex-end;
 
   position: relative;
+}
+
+.program-single-box-icon {
+  margin-left: 12px;
 }
 
 .program-single-box-overlay {
@@ -491,10 +646,32 @@
 
 @media (min-width: 540px) {
   .App {
-    font-size: 16px;
+    font-size: 20px;
   }
 
-  .program-list {
+  #home-cover-title {
+    width: 50%;
+    position: static;
+  }
+
+  #home-cover-img {
+    width: 50%;
+  }
+
+  .program-list-single {
+    flex-direction: row;
+  }
+
+  .program-list-single-cover {
+    width: 50%;
+    max-width: 400px;
+  }
+
+  .program-list-single-info {
+    padding: 40px;
+  }
+
+  /* .program-list {
     width: 100%;
   }
   .program-list-single {
@@ -508,6 +685,6 @@
   
   .program-overlay:hover {
     top: -60px;
-  }
+  } */
 
 }

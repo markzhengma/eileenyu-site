@@ -20,37 +20,41 @@ import ScrollToTop from './utils/ScrollToTop';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+function ProgramPage(){
+  let id = useParams().id;
+  return (
+    <ProgramSingle
+      id = { id }
+    />
+  )
+}
+
 export default class App extends Component{
   constructor(){
     super();
 
     this.state = {
+      currPath: '/',
       page: 'home'
     }
 
     this.scrollToElement = this.scrollToElement.bind(this);
+    this.changePath = this.changePath.bind(this);
+    this.changePage = this.changePage.bind(this);
   };
 
-  // async componentDidMount(){
-  //   console.log(navigator.languages);
-  //   const ipData = await axios.get('https://api.ipify.org?format=json');
-  //   console.log(ipData);
-    // const ipData = await axios.get('http://ip-api.com/json');
-    // const country = ipData ? ipData.data.country : null;
-    // this.setState({
-    //   ipData: ipData ? ipData.data : null
-    // });
+  changePath = (path) => {
+    this.setState({
+      currPath: path
+    })
+    console.log(path)
+  };
 
-    // switch(country) {
-    //   case "China":
-    //     console.log(country);
-    //     console.log('检测到登陆地在中国大陆，正在切换中文设置~');
-    //     break;
-    //   default:
-    //     console.log(country);
-    //     break;
-    // }
-  // }
+  changePage = (page) => {
+    this.setState({
+      page
+    })
+  };
 
   scrollToElement = (name) => {
     scroller.scrollTo(name, {
@@ -60,29 +64,31 @@ export default class App extends Component{
   };
 
   render() {
-    function ProgramPage(){
-      let id = useParams().id;
-      return (
-        <ProgramSingle id = { id }/>
-      )
-    }
+    
     return (
       <Router>
-        <ScrollToTop>
+        <ScrollToTop
+          changePath = { this.changePath }
+        >
           <div className="App">
             <Header
-              scrollToElement = {this.scrollToElement}
+              currPath = { this.state.currPath }
+              scrollToElement = { this.scrollToElement }
             />
             <Switch>
               <Route exact path="/">
                 <Home
-                  scrollToElement = {this.scrollToElement}
+                  scrollToElement = { this.scrollToElement }
                 />
               </Route>
               <Route path="/program/:id">
-                <ProgramPage />
+                <ProgramPage
+                />
+                {/* <ProgramSingle id = 'c20201019' /> */}
               </Route>
-              <Route component={Construction} />
+              <Route 
+                component={ Construction }
+              />
             </Switch>
             <Contact/>
           </div>

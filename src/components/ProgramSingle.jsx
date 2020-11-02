@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import LazyLoad from 'react-lazyload';
 
 export default class ProgramSingle extends Component {
   constructor() {
@@ -408,15 +409,7 @@ export default class ProgramSingle extends Component {
   };
 
   async componentDidMount(){
-    // const testData = {
-    //   cid: this.props.id,
-    // };
-
-    // this.setState({ 
-    //   cid: testData.id
-    // })
-
-    const programRes = await axios.get(`http://localhost:7001/calendar/single/${this.props.id}`);
+    const programRes = await axios.get(`http://192.168.1.18:7001/calendar/single/${this.props.id}`);
     const programData = programRes.data.data;
     
     this.setState({
@@ -449,25 +442,31 @@ export default class ProgramSingle extends Component {
     return (
       <div 
         className="program-single-page flex-hc-vc"
-        style={{backgroundColor: this.state.bg_color}}
+        // style={{backgroundColor: this.state.bg_color}}
       >
         <div className="spacer"></div>
+        <div 
+          className="program-single-banner-bg"
+          style={{backgroundImage: `url(${this.state.img})`}}
+        />
         <div 
           className="program-single-banner flex-hc-vc"
           style={{backgroundImage: `url(${this.state.img})`}}
         >
-          <h3 className="program-single-title">
-            { this.state.title }
-          </h3>
-          <b className="program-single-detail">
-            Release: { this.state.release }
-          </b>
-          <b className="program-single-detail">
-            { this.state.time_pday} mins x { this.state.day_cnt } days
-          </b>
-          <b className="program-single-detail">
-            { this.state.keyword }
-          </b>
+          <div className="program-single-infobox flex-hc-vc">
+            <b className="program-single-title">
+              { this.state.title }
+            </b>
+            <b className="program-single-detail">
+              Release: { this.state.release }
+            </b>
+            <b className="program-single-detail">
+              { this.state.time_pday} mins x { this.state.day_cnt } days
+            </b>
+            <b className="program-single-detail">
+              { this.state.keyword }
+            </b>
+          </div>
         </div>
         <div className="program-single-calendar">
           { this.state.detail.map(day => {
@@ -475,18 +474,28 @@ export default class ProgramSingle extends Component {
               <div 
                 className="program-single-day" 
                 key={day.day}
-                style={{ borderLeft: `${this.state.txt_color} solid 2px`}}
+                // style={{ borderLeft: `${this.state.txt_color} solid 2px`}}
               >
-                <div className="program-single-day-title-block">
+                <div className="program-single-day-title-block"
+                  // style={{backgroundColor: this.state.txt_color}}
+                >
                   <div 
                     className="program-single-day-title"
-                    style={{color: this.state.txt_color}}
                     // style={{ background: `linear-gradient(to right, ${this.state.txt_color}, rgba(0, 0, 0, 0))`,
                     //   color: this.state.bg_color
                     // }}
                   >
-                    <div className = "icon-small icon-calendar" style={{marginRight: "6px"}}></div>
-                    { day.day }
+                    <div className = "icon-small icon-calendar" style={{marginRight: "16px"}}></div>
+                    <div className="program-single-day-title-txt">
+                      { day.day }
+                    </div>
+                    <div 
+                      className="program-single-day-detail"
+                      // style={{color: this.state.txt_color}}
+                    >
+                      {/* <div className = "icon-small icon-card"></div> */}
+                      { day.keyword.length <= 6 ? day.keyword : day.keyword.substring(0, 5) + '...' }
+                    </div>
                   </div>
                   <b 
                     className="program-single-day-time"
@@ -494,55 +503,53 @@ export default class ProgramSingle extends Component {
                     { day.time_span } min
                   </b>
                 </div>
-                <div 
-                  className="program-single-day-detail"
-                  style={{color: this.state.txt_color}}
-                >
-                  {/* <div className = "icon-small icon-card"></div> */}
-                  { day.keyword }
-                </div>
+                
                 <div className="program-single-day-list">
                   { !day.is_rest
                     ? day.list.map(program => {
                         return (
-                          <div 
+                          <LazyLoad
                             key = {day + program.vid}
-                            className="program-single-box"
-                            style={{ backgroundImage: `url(${program.img_720})`}}
-                            onMouseEnter={() => this.selectProgram(day.day+program.vid)}
-                            onMouseLeave={() => this.clearProgramSelection()}
                           >
                             <div 
-                              className="program-single-box-overlay"
-                              style={{ display: day.day+program.vid === this.state.selectedProgramId ? "flex" : "none"}}
+                              
+                              className="program-single-box"
+                              style={{ backgroundImage: `url(${program.img_720})`}}
+                              onMouseEnter={() => this.selectProgram(day.day+program.vid)}
+                              onMouseLeave={() => this.clearProgramSelection()}
                             >
-                              <a 
-                                href={program.url_yt} 
-                                target="_blank"
-                                rel="noopener noreferrer"
+                              <div 
+                                className="program-single-box-overlay"
+                                style={{ display: day.day+program.vid === this.state.selectedProgramId ? "flex" : "none"}}
                               >
-                                <div className="icon-btn icon-youtube"></div>
-                              </a>
-                              {program.url_bili 
-                                ? <a 
-                                  href={program.url_bili} 
+                                <a 
+                                  href={program.url_yt} 
                                   target="_blank"
                                   rel="noopener noreferrer"
                                 >
-                                  <div className="icon-btn icon-bili"></div>
+                                  <div className="icon-btn icon-youtube"></div>
                                 </a>
-                                : ""
-                              }
+                                {program.url_bili 
+                                  ? <a 
+                                    href={program.url_bili} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    <div className="icon-btn icon-bili"></div>
+                                  </a>
+                                  : ""
+                                }
+                              </div>
+                              <div className="program-single-box-title-container">
+                                <b className="program-single-box-title">
+                                  { program.title_cn }
+                                </b>
+                              </div>
                             </div>
-                            <div className="program-single-box-title-container">
-                              <b className="program-single-box-title">
-                                { program.title_cn }
-                              </b>
-                            </div>
-                          </div>
+                          </LazyLoad>
                         )
                       })
-                    : <div className="icon beachchair"></div>
+                    : <div className="icon relax program-single-box-icon"></div>
                   }
                 </div>
               </div>

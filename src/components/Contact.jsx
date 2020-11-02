@@ -26,7 +26,7 @@ export default class Contact extends Component {
           disabled: false
         },
         yt: {
-          image: 'https://static.markzhengma.com/cover_yt.jpg',
+          image: 'https://static.markzhengma.com/eileenyu/cover_yt.png',
           url: 'https://www.youtube.com/c/EileenYu?sub_confirmation=1',
           btnTxt: '打开YouTube',
           btn_bg: '',
@@ -34,7 +34,7 @@ export default class Contact extends Component {
           disabled: false
         },
         bili: {
-          image: 'https://static.markzhengma.com/cover_bili.jpg',
+          image: 'https://static.markzhengma.com/eileenyu/cover_bili.png',
           url: 'https://space.bilibili.com/344135105',
           btnTxt: '打开Bilibili',
           btn_bg: '',
@@ -42,7 +42,7 @@ export default class Contact extends Component {
           disabled: false
         },
         ins: {
-          image: 'https://static.markzhengma.com/cover_ins.jpg',
+          image: 'https://static.markzhengma.com/eileenyu/cover_ins.png',
           url: 'https://www.instagram.com/eileenismart',
           btnTxt: '打开Instagram',
           btn_bg: '',
@@ -50,7 +50,7 @@ export default class Contact extends Component {
           disabled: false
         },
         wb: {
-          image: 'https://static.markzhengma.com/cover_wb.jpg',
+          image: 'https://static.markzhengma.com/eileenyu/cover_wb.png',
           url: 'https://www.weibo.com/p/1005052913443311/home',
           btnTxt: '打开微博',
           btn_bg: '',
@@ -58,7 +58,7 @@ export default class Contact extends Component {
           disabled: false
         },
         xigua: {
-          image: 'https://static.markzhengma.com/cover_xigua.jpg',
+          image: 'https://static.markzhengma.com/eileenyu/cover_xigua.png',
           url: 'https://www.ixigua.com/home/3474099493142808',
           btnTxt: '打开西瓜视频',
           btn_bg: '',
@@ -66,7 +66,7 @@ export default class Contact extends Component {
           disabled: false
         },
         wechat: {
-          image: 'https://static.markzhengma.com/cover_wechat.jpg',
+          image: 'https://static.markzhengma.com/eileenyu/cover_wechat.png',
           url: '',
           btnTxt: '扫描二维码看微信公众号',
           btn_bg: '',
@@ -110,29 +110,6 @@ export default class Contact extends Component {
           <Navbar.Collapse id="footer-navbar-collapse">
             <div>
               <Nav id = "footer-navbar-links">
-                {/* <Nav.Link href="mailto:comeoneileen12@163.com">
-                  <span className="iconfont icon-email"></span>
-                </Nav.Link>
-                <Nav.Link href="https://www.youtube.com/c/EileenYu?sub_confirmation=1" target='_blank' rel="noopener noreferrer">
-                  <span className="iconfont icon-youtube"></span>
-                </Nav.Link>
-                <Nav.Link href="https://space.bilibili.com/344135105" target='_blank' rel="noopener noreferrer">
-                  <span className="iconfont icon-bilibili-fill"></span>
-                </Nav.Link>
-                <Nav.Link href="https://www.instagram.com/eileenismart" target='_blank' rel="noopener noreferrer">
-                  <span className="iconfont icon-instagram"></span>
-                </Nav.Link>
-                <Nav.Link href="https://www.weibo.com/p/1005052913443311/home?from=page_100505&mod=TAB#place" target='_blank' rel="noopener noreferrer">
-                  <span className="iconfont icon-weibo"></span>
-                </Nav.Link>
-                <OverlayTrigger trigger={["hover","click"]} placement="top" overlay={wechatPop}>
-                  <Nav.Link href="#" target='_blank' rel="noopener noreferrer">
-                    <span className="iconfont icon-wechat"></span>
-                  </Nav.Link>
-                </OverlayTrigger>
-                <Nav.Link href="https://www.ixigua.com/home/3474099493142808" target='_blank' rel="noopener noreferrer">
-                  <span className="iconfont icon-xiguashipin"></span>
-                </Nav.Link> */}
                 <Nav.Link
                   className='smicon-link'
                   onMouseEnter={()=>this.selectSM('mail')}
