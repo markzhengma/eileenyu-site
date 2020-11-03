@@ -22,7 +22,6 @@ export default class Home extends Component {
             <Button
               variant="outline-danger" 
               onClick={this.handleYTRedirect}
-              style={{fontWeight: '600'}}
             >
               关注我
             </Button>

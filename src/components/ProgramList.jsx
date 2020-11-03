@@ -66,7 +66,9 @@ export default class ProgramList extends Component {
                   </h3>
                   <span className="program-list-single-span">Release: { program.release }</span>
                   <span className="program-list-single-span">{ program.keyword }</span>
-                  <p>{ program.description }</p>
+                  <div className="program-list-single-desc">
+                    <p>{ program.description }</p>
+                  </div>
                 </div>
               </div>
             )

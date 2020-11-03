@@ -427,15 +427,19 @@ export default class ProgramSingle extends Component {
   };
 
   selectProgram(id) {
-    this.setState({
-      selectedProgramId: id
-    });
+    if(window.innerWidth >= 540) {
+      this.setState({
+        selectedProgramId: id
+      });
+    }
   };
 
   clearProgramSelection() {
-    this.setState({
-      selectedProgramId: ""
-    })
+    if(window.innerWidth >= 540) {
+      this.setState({
+        selectedProgramId: ""
+      })
+    }
   }
 
   render() {
@@ -511,61 +515,96 @@ export default class ProgramSingle extends Component {
                           <LazyLoad
                             key = {day + program.vid}
                           >
-                            <div 
-                              
-                              className="program-single-box"
-                              style={{ backgroundImage: `url(${program.img_720})`}}
-                              onMouseEnter={() => this.selectProgram(day.day+program.vid)}
-                              onMouseLeave={() => this.clearProgramSelection()}
-                            >
+                            <div className="program-single-box-wrapper">
                               <div 
-                                className="program-single-box-overlay"
-                                style={{ display: day.day+program.vid === this.state.selectedProgramId 
-                                  ? "flex" 
-                                  : "none"
-                                }}
+                                className="program-single-box"
+                                style={{ backgroundImage: `url(${program.img_720})`}}
+                                onMouseEnter={() => this.selectProgram(day.day+program.vid)}
+                                onMouseLeave={() => this.clearProgramSelection()}
                               >
-                                <a 
-                                  href={program.url_yt} 
-                                  target="_blank"
-                                  rel="noopener noreferrer"
+                                <div 
+                                  className="program-single-box-overlay"
+                                  style={{ display: day.day+program.vid === this.state.selectedProgramId 
+                                    ? "flex" 
+                                    : "none"
+                                  }}
                                 >
-                                  <div 
+                                  <a 
+                                    href={program.url_yt} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="icon-btn icon-youtube"
-                                  />
-                                </a>
-                                {program.url_bili 
-                                  ? <a 
-                                      href={program.url_bili} 
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                    >
-                                      <div 
-                                        className="icon-btn icon-bili"
-                                      />
-                                    </a>
-                                  : ""
-                                }
-                                {program.url_wx 
-                                  ? !program.url_bili
+                                  >
+                                    <div/>
+                                  </a>
+                                  {program.url_bili 
                                     ? <a 
-                                        href={program.url_wx} 
+                                        href={program.url_bili} 
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        className="icon-btn icon-bili"
                                       >
-                                        <div 
-                                          className="icon-btn icon-wechat"
-                                        />
+                                        <div/>
                                       </a>
                                     : ""
-                                  : ""
-                                }
+                                  }
+                                  {program.url_wx 
+                                    ? !program.url_bili
+                                      ? <a 
+                                          href={program.url_wx} 
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="icon-btn icon-wechat"
+                                        >
+                                          <div/>
+                                        </a>
+                                      : ""
+                                    : ""
+                                  }
+                                </div>
+                                <div className="program-single-box-title-container">
+                                  <b className="program-single-box-title">
+                                    { program.title_cn }
+                                  </b>
+                                </div>
+                                
                               </div>
-                              <div className="program-single-box-title-container">
-                                <b className="program-single-box-title">
-                                  { program.title_cn }
-                                </b>
-                              </div>
+                              <div 
+                                  className="program-single-box-btngroup"
+                                >
+                                  <a 
+                                    href={program.url_yt} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="icon-btn-mobile icon-youtube"
+                                  >
+                                    <div/>
+                                  </a>
+                                  {program.url_bili 
+                                    ? <a 
+                                        href={program.url_bili} 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="icon-btn-mobile icon-bili"
+                                      >
+                                        <div/>
+                                      </a>
+                                    : ""
+                                  }
+                                  {program.url_wx 
+                                    ? !program.url_bili
+                                      ? <a 
+                                          href={program.url_wx} 
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="icon-btn-mobile icon-wechat"
+                                        >
+                                          <div/>
+                                        </a>
+                                      : ""
+                                    : ""
+                                  }
+                                </div>
                             </div>
                           </LazyLoad>
                         )
