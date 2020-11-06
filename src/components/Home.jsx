@@ -18,9 +18,9 @@ export default class Home extends Component {
         <Element className="spacer cover-spacer" name="cover-spacer" />
         <div id="home-cover">
           <div id="home-cover-title">
-            <b>来这里，遇见更强大的自己...</b>
+            <b>健身是自己的旅程，不要跟别人比，不管那个人是你的朋友、我、或者是封面女郎。</b>
             <Button
-              variant="outline-danger" 
+              variant="danger" 
               onClick={this.handleYTRedirect}
             >
               关注我

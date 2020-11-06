@@ -9,7 +9,7 @@ export default class Contact extends Component {
     this.state = {
       selectedIcon: 'mail',
       selectedData: {
-        image: 'https://static.markzhengma.com/cover_mail.jpg',
+        image: 'https://static.markzhengma.com/eileenyu/cover_mail.png',
         url: 'mailto:comeoneileen12@163.com',
         btnTxt: '发邮件给我',
         btn_bg: '',
@@ -18,9 +18,9 @@ export default class Contact extends Component {
       },
       smData: {
         mail: {
-          image: 'https://static.markzhengma.com/cover_mail.jpg',
+          image: 'https://static.markzhengma.com/eileenyu/cover_mail.png',
           url: 'mailto:comeoneileen12@163.com',
-          btnTxt: '发邮件给我们',
+          btnTxt: '发邮件给我',
           btn_bg: '',
           bg_color: '#f8f9fa',
           disabled: false
