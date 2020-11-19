@@ -11,7 +11,11 @@ export default class Header extends Component {
         fixed="top" 
         expand="sm"
       >
-        <Navbar.Brand id="logo" href="/">
+        <Navbar.Brand 
+          id="logo" 
+          as={Link} 
+          to="/"
+        >
           Eileen Yu
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="nav-bar" />
@@ -20,7 +24,7 @@ export default class Header extends Component {
             { this.props.currPath === '/'
               ? <Nav.Link 
                   eventKey = 'home'
-                  onClick = {() => this.props.scrollToElement('cover-spacer')}
+                  onSelect = {() => this.props.scrollToElement('cover-spacer')}
                 >
                   主页
                 </Nav.Link>
@@ -44,6 +48,12 @@ export default class Header extends Component {
               onClick = {() => this.props.scrollToElement('contact-spacer')}
             >
               联系我
+            </Nav.Link>
+            <Nav.Link 
+              eventKey = 'login'
+              onClick = {() => this.props.changeShowLoginBox(true)}
+            >
+              登录
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

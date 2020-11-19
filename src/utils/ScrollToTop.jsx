@@ -10,14 +10,12 @@ class ScrollToTop extends Component {
 	// };
 
 	componentDidMount() {
-		console.log('mounted');
 		this.props.changePath(this.props.location.pathname);
 		// console.log(this.props.location);
 	};
 
 	componentDidUpdate(prevProps) {
 		if (this.props.location !== prevProps.location) {
-			console.log('update');
 			// console.log(this.props.location);
 			this.props.changePath(this.props.location.pathname);
       window.scrollTo(0, 0);

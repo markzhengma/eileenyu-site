@@ -13,6 +13,7 @@ import Contact from './components/Contact';
 import Header from './components/Header';
 import Home from './components/Home';
 import ProgramSingle from './components/ProgramSingle';
+import Login from './components/Login';
 import Construction from './components/Construction';
 
 import ScrollToTop from './utils/ScrollToTop';
@@ -35,25 +36,19 @@ export default class App extends Component{
 
     this.state = {
       currPath: '/',
-      page: 'home'
+      isShowLoginBox: false
     }
 
     this.scrollToElement = this.scrollToElement.bind(this);
     this.changePath = this.changePath.bind(this);
-    this.changePage = this.changePage.bind(this);
+    this.changeShowLoginBox = this.changeShowLoginBox.bind(this);
   };
 
   changePath = (path) => {
     this.setState({
       currPath: path
     })
-    console.log(path)
-  };
-
-  changePage = (page) => {
-    this.setState({
-      page
-    })
+    // console.log(path)
   };
 
   scrollToElement = (name) => {
@@ -61,6 +56,13 @@ export default class App extends Component{
       duration: 500,
       smooth: true,
     });
+  };
+
+  changeShowLoginBox = (status) => {
+    // let showingStatus = this.state.isShowLoginBox;
+    this.setState({
+      isShowLoginBox: status
+    })
   };
 
   render() {
@@ -71,9 +73,17 @@ export default class App extends Component{
           changePath = { this.changePath }
         >
           <div className="App">
+            {
+              this.state.isShowLoginBox
+                ? <Login
+                    changeShowLoginBox = { this.changeShowLoginBox }
+                  />
+                : ''
+            }
             <Header
               currPath = { this.state.currPath }
               scrollToElement = { this.scrollToElement }
+              changeShowLoginBox = { this.changeShowLoginBox }
             />
             <Switch>
               <Route exact path="/">

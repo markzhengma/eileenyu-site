@@ -45,6 +45,13 @@
   justify-content: center;
 }
 
+.flex-hs-vc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 /* navigation */
 
 #nav-bar {
@@ -58,6 +65,44 @@
 #logo{
   color: grey;
   font-weight: 600;
+}
+
+/* login form */
+
+#login-container {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#login-box {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 20px;
+  color: #5a5a5a;
+  font-weight: bold;
+}
+
+#login-box-btngroup {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.hint {
+  color: white;
+  background-color: rgb(238, 121, 121);
+  font-weight: 600;
+  font-size: 12px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
 }
 
 /* homepage cover section */
@@ -137,7 +182,7 @@
 
 .title {
   font-weight: bold;
-  color: #5a5a5a;;
+  color: #5a5a5a;
 }
 
 .title-section {
