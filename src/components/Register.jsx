@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Form, Button, Spinner } from 'react-bootstrap';
 import axios from 'axios';
-// import Cookies from 'js-cookie';
 
-export default class Login extends Component {
-  constructor() {
+export default class Register extends Component {
+  constructor(){
     super();
     this.state = {
       username: '',
       password: '',
+      gender: '',
+      level: '',
+      age: '',
+      isRemembered: false,
       isShowHint: false,
       hint: '请输入完整的用户名和密码哟',
       isLoading: false,
-      isRemembered: false
     }
   };
 
@@ -34,16 +36,15 @@ export default class Login extends Component {
         hint: hint
       });
     }, 3000)
-  }
+  };
 
-  confirmLogin = async (e) => {
+  confirmRegister = async (e) => {
     e.preventDefault();
 
     let self = this;
-    let { username, password, isRemembered, isLoading } = self.state;
+    let { username, password, gender, level, age, isRemembered, isLoading } = self.state;
 
     if(!isLoading) {
-
       if(username === '' || password === '') {
         self.showHint('请输入完整的用户名和密码哟');
 
@@ -53,11 +54,14 @@ export default class Login extends Component {
         // let csrfToken = Cookies.get('csrfToken');
 
         const loginRes = await axios({
-          url: 'http://localhost:7001/user/login', 
+          url: 'http://localhost:7001/user/register', 
           method: 'POST',
           data: {
             username,
             password,
+            gender,
+            age,
+            level,
             isRemembered
           },
           withCredentials: true
@@ -69,24 +73,31 @@ export default class Login extends Component {
           self.showHint('啊哦网络开小差了');
         });
 
-        let loginCallBack = () => {
+        let registerCallBack = () => {
           if(!loginRes || !loginRes.data) {
             self.showHint('啊哦网络开小差了');
 
           } else if (loginRes.data.code !== 200) {
-            self.showHint('请再检查一下用户名和密码哟');
+            switch(loginRes.data.code) {
+              case 4012:
+                self.showHint('用户名被占用，换一个试试吧！');
+                break;
+              default: 
+                self.showHint('注册失败');
+                break;
+            }
             console.error(loginRes.data);
 
           } else {
             // await clearTimeout(timeout);
             this.props.setUser(loginRes.data.data);
-            this.props.changeShowLoginBox(false);
+            this.props.changeShowRegisterBox(false);
 
           }
         }
 
         setTimeout(() => {
-          self.changeLoadingStatus(false, loginCallBack);
+          self.changeLoadingStatus(false, registerCallBack);
         }, 500);
       }
     }
@@ -106,16 +117,16 @@ export default class Login extends Component {
   };
 
   handleFormOutsideClick = e => {
-    this.props.changeShowLoginBox(false);
+    this.props.changeShowRegisterBox(false)
   };
 
-  navToRegister = () => {
-    this.props.changeShowRegisterBox(true);
-    this.props.changeShowLoginBox(false);
+  navToLogin = () => {
+    this.props.changeShowLoginBox(true);
+    this.props.changeShowRegisterBox(false);
   }
 
   render() {
-    return (
+    return(
       <div 
         id="login-container" 
         className="flex-hc-vc"
@@ -148,7 +159,7 @@ export default class Login extends Component {
               : ''
           }
           <Form
-            onSubmit={this.confirmLogin}
+            onSubmit={this.confirmRegister}
           >
             <Form.Group>
               <Form.Label>用户名</Form.Label>
@@ -169,6 +180,36 @@ export default class Login extends Component {
                 onChange = {this.handleInputChange}
               />
             </Form.Group>
+            <Form.Group>
+              <Form.Label>性别</Form.Label>
+              <Form.Control 
+                type="text" 
+                placeholder="性别" 
+                name = "gender"
+                onChange = {this.handleInputChange}
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label>年龄</Form.Label>
+              <Form.Control 
+                type="number" 
+                placeholder="年龄" 
+                name = "age"
+                onChange = {this.handleInputChange}
+              />
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label>训练等级</Form.Label>
+              <Form.Control 
+                type="number" 
+                placeholder="训练等级" 
+                name = "level"
+                onChange = {this.handleInputChange}
+              />
+            </Form.Group>
+
             <Form.Group controlId="formBasicCheckbox">
               <Form.Check 
                 type="checkbox" 
@@ -179,12 +220,15 @@ export default class Login extends Component {
             </Form.Group>
 
             <div id="login-box-btngroup" className="flex-hs-vc">
-              <Button variant="success" type="submit">
-                登录
+              <Button 
+                variant="danger" 
+                onClick={this.navToLogin}
+              >
+                返回
               </Button>
               <Button 
-                variant="warning"
-                onClick={this.navToRegister}
+                variant="success"
+                type="submit"
               >
                 注册
               </Button>

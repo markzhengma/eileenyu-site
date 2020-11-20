@@ -6,14 +6,15 @@ import {
   Route,
   useParams
 } from "react-router-dom";
-// import axios from 'axios';
-// import { CookiesProvider } from 'react-cookie';
+import axios from 'axios';
+import Cookies from 'js-cookie';
 
 import Contact from './components/Contact';
 import Header from './components/Header';
 import Home from './components/Home';
 import ProgramSingle from './components/ProgramSingle';
 import Login from './components/Login';
+import Register from './components/Register';
 import Construction from './components/Construction';
 
 import ScrollToTop from './utils/ScrollToTop';
@@ -36,13 +37,36 @@ export default class App extends Component{
 
     this.state = {
       currPath: '/',
-      isShowLoginBox: false
+      isShowLoginBox: false,
+      isShowRegisterBox: false,
+      userData: null
     }
 
     this.scrollToElement = this.scrollToElement.bind(this);
     this.changePath = this.changePath.bind(this);
     this.changeShowLoginBox = this.changeShowLoginBox.bind(this);
+    this.changeShowRegisterBox = this.changeShowRegisterBox.bind(this);
+    this.setUser = this.setUser.bind(this);
   };
+
+  async componentDidMount() {
+    let userCookie = Cookies.get('user');
+
+    if(userCookie) {
+      let loginRes = await axios({
+        method: 'POST',
+        url: 'http://localhost:7001/user/self-login',
+        withCredentials: true
+      });
+
+      if(!loginRes || !loginRes.data || loginRes.data.code !== 200) {
+        console.error('user cookie invalid');
+        console.error(loginRes);
+      } else {
+        this.setUser(loginRes.data.data);
+      }
+    }
+  }
 
   changePath = (path) => {
     this.setState({
@@ -59,9 +83,24 @@ export default class App extends Component{
   };
 
   changeShowLoginBox = (status) => {
-    // let showingStatus = this.state.isShowLoginBox;
     this.setState({
       isShowLoginBox: status
+    })
+  };
+
+  changeShowRegisterBox = (status) => {
+    this.setState({
+      isShowRegisterBox: status
+    })
+  };
+
+  setUser = (data) => {
+    this.setState({
+      userData: data
+    }, () => {
+      if(!data) {
+        Cookies.remove('user');
+      }
     })
   };
 
@@ -77,13 +116,26 @@ export default class App extends Component{
               this.state.isShowLoginBox
                 ? <Login
                     changeShowLoginBox = { this.changeShowLoginBox }
+                    changeShowRegisterBox = { this.changeShowRegisterBox }
+                    setUser = { this.setUser }
+                  />
+                : ''
+            }
+            {
+              this.state.isShowRegisterBox
+                ? <Register
+                    changeShowLoginBox = { this.changeShowLoginBox }
+                    changeShowRegisterBox = { this.changeShowRegisterBox }
+                    setUser = { this.setUser }
                   />
                 : ''
             }
             <Header
               currPath = { this.state.currPath }
+              userData = { this.state.userData }
               scrollToElement = { this.scrollToElement }
               changeShowLoginBox = { this.changeShowLoginBox }
+              setUser = { this.setUser }
             />
             <Switch>
               <Route exact path="/">
