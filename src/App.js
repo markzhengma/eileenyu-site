@@ -82,16 +82,16 @@ export default class App extends Component{
     });
   };
 
-  changeShowLoginBox = (status) => {
+  changeShowLoginBox = (status, callback) => {
     this.setState({
       isShowLoginBox: status
-    })
+    }, callback)
   };
 
-  changeShowRegisterBox = (status) => {
+  changeShowRegisterBox = (status, callback) => {
     this.setState({
       isShowRegisterBox: status
-    })
+    }, callback)
   };
 
   setUser = (data) => {

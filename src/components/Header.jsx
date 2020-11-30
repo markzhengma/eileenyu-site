@@ -59,7 +59,7 @@ export default class Header extends Component {
                       childBsPrefix="profile-btn flex-hs-vc"
                     >
                       <div id="profile-btn-text">
-                        {this.props.userData.username}
+                        {this.props.userData.displayname}
                       </div>
                     </Dropdown.Toggle>
                     <Dropdown.Menu 

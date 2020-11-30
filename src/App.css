@@ -85,14 +85,15 @@
 
 /* login form */
 
-#login-container {
+.popup-container {
   position: fixed;
-  z-index: 1;
+  z-index: 1031;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
+  background-attachment: fixed;
 }
 
 #login-box {
@@ -102,9 +103,25 @@
   padding: 20px;
   color: #5a5a5a;
   font-weight: bold;
+  font-size: 16px;
 }
 
 #login-box-btngroup {
+  width: 100%;
+  margin-top: 10px;
+}
+#register-box {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  padding: 20px;
+  color: #5a5a5a;
+  font-weight: bold;
+  font-size: 16px;
+  min-width: 300px;
+}
+
+#register-box-btngroup {
   width: 100%;
   margin-top: 10px;
 }
@@ -123,7 +140,7 @@
 
 .loading {
   position: absolute;
-  z-index: 2;
+  z-index: 1032;
   top: 0;
   left: 0;
   width: 100%;
@@ -708,7 +725,7 @@
   #home-cover-title {
     width: 50%;
     position: static;
-    background-color: white;
+    background-color: #f8f9fa;
     color: #5a5a5a;
     font-size: 32px;
   }

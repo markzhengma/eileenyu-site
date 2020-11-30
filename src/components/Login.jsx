@@ -110,15 +110,13 @@ export default class Login extends Component {
   };
 
   navToRegister = () => {
-    this.props.changeShowRegisterBox(true);
-    this.props.changeShowLoginBox(false);
+    this.props.changeShowRegisterBox(true, () => this.props.changeShowLoginBox(false));
   }
 
   render() {
     return (
       <div 
-        id="login-container" 
-        className="flex-hc-vc"
+        className="popup-container flex-hc-vc"
         onClick = {this.handleFormOutsideClick}
       >
         <div 
@@ -183,7 +181,7 @@ export default class Login extends Component {
                 登录
               </Button>
               <Button 
-                variant="warning"
+                variant="light"
                 onClick={this.navToRegister}
               >
                 注册
