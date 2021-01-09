@@ -63,7 +63,7 @@ export default class Register extends Component {
       // let csrfToken = Cookies.get('csrfToken');
 
       const loginRes = await axios({
-        url: 'http://localhost:7001/user/register', 
+        url: 'https://api.eileen-yu.com/user/register', 
         method: 'POST',
         data: {
           username,

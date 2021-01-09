@@ -55,7 +55,7 @@ export default class App extends Component{
     if(userCookie) {
       let loginRes = await axios({
         method: 'POST',
-        url: 'http://localhost:7001/user/self-login',
+        url: 'https://api.eileen-yu.com/user/self-login',
         withCredentials: true
       });
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, Dropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
@@ -52,7 +52,7 @@ export default class Header extends Component {
             >
               联系我
             </Nav.Link>
-            {
+            {/* {
               this.props.userData 
                 ? <Dropdown alignRight>
                     <Dropdown.Toggle 
@@ -69,8 +69,8 @@ export default class Header extends Component {
                       }}
                     >
                       <Dropdown.Item disabled>训练进度（即将推出）</Dropdown.Item>
-                      {/* <Dropdown.Item disabled>我的收藏（施工中）</Dropdown.Item>
-                      <Dropdown.Item disabled>我的资料（施工中）</Dropdown.Item> */}
+                      <Dropdown.Item disabled>我的收藏（施工中）</Dropdown.Item>
+                      <Dropdown.Item disabled>我的资料（施工中）</Dropdown.Item>
                       <Dropdown.Divider />
                       <Dropdown.Item
                         style={{color: '#00000080'}}
@@ -86,7 +86,7 @@ export default class Header extends Component {
                   >
                     登录
                   </Nav.Link>
-            }
+            } */}
           </Nav>
         </Navbar.Collapse>
         
