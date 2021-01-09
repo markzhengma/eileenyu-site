@@ -53,7 +53,7 @@ export default class Login extends Component {
         // let csrfToken = Cookies.get('csrfToken');
 
         const loginRes = await axios({
-          url: 'http://localhost:7001/user/login', 
+          url: 'https://api.eileen-yu.com/user/login', 
           method: 'POST',
           data: {
             username,
@@ -91,6 +91,13 @@ export default class Login extends Component {
       }
     }
   };
+
+  weiboLogin = () => {
+    axios('https://api.weibo.com/oauth2/authorize?client_id=1303158097&response_type=code&redirect_uri=http://api-test.eileen-yu.com/user/weibo-login')
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
   handleInputChange = e => {
     const target = e.target;
@@ -177,9 +184,12 @@ export default class Login extends Component {
             </Form.Group>
 
             <div id="login-box-btngroup" className="flex-hs-vc">
-              <Button variant="success" type="submit">
-                登录
+              <Button variant="success" onClick = {this.weiboLogin}>
+                微博登录
               </Button>
+              {/* <Button variant="success" type="submit">
+                登录
+              </Button> */}
               <Button 
                 variant="light"
                 onClick={this.navToRegister}

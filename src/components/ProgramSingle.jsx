@@ -409,7 +409,7 @@ export default class ProgramSingle extends Component {
   };
 
   async componentDidMount(){
-    const programRes = await axios.get(`http://localhost:7001/calendar/single/${this.props.id}`);
+    const programRes = await axios.get(`https://api.eileen-yu.com/calendar/single/${this.props.id}`);
     const programData = programRes.data.data;
     
     this.setState({
@@ -483,6 +483,7 @@ export default class ProgramSingle extends Component {
                 <div className="program-single-day-title-block"
                   // style={{backgroundColor: this.state.txt_color}}
                 >
+                  <div className="program-single-day-dot"></div>
                   <div 
                     className="program-single-day-title"
                     // style={{ background: `linear-gradient(to right, ${this.state.txt_color}, rgba(0, 0, 0, 0))`,
