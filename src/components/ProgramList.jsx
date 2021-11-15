@@ -17,7 +17,7 @@ export default class ProgramList extends Component {
         //   time_pday: '30-45',
         //   day_cnt: '7',
         //   detail: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae minima necessitatibus molestiae labore, eaque alias, fuga saepe voluptatem culpa repellendus dolores minus obcaecati, nisi fugiat sed tenetur eos praesentium illum.',
-        //   img: 'https://static.markzhengma.com/program-cover-test1.jpg'
+        //   img: 'https://static.eileen-yu.com/program-cover-test1.jpg'
         // },
       ]
     }

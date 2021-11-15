@@ -183,7 +183,7 @@
 #home-cover-img {
   height: calc(100vh - 56px);
   width: 100%;
-  background-image: url('https://static.markzhengma.com/eileen-cover.jpg');
+  background-image: url('https://static.eileen-yu.com/eileen-cover.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -219,7 +219,7 @@
 }
 
 #icon-scroll {
-  background-image: url("https://static.markzhengma.com/icon/scroll-white.png");
+  background-image: url("https://static.eileen-yu.com/icon/scroll-white.png");
   animation: blink 3s infinite;
 }
 
@@ -256,7 +256,7 @@
 }
 
 #cover-1 {
-  background-image: url('https://static.markzhengma.com/eileen-cover.jpg');
+  background-image: url('https://static.eileen-yu.com/eileen-cover.jpg');
   height: calc(100vh - 56px);
   transition: height 0.5s;
   min-height: 305px;
@@ -267,7 +267,7 @@
 }
 
 #cover-2 {
-  background-image: url('https://static.markzhengma.com/eileen-cover2.jpg');
+  background-image: url('https://static.eileen-yu.com/eileen-cover2.jpg');
   height: calc(100vh - 56px);
   transition: height 0.5s;
   min-height: 305px;
@@ -278,7 +278,7 @@
 }
 
 #cover-3 {
-  background-image: url('https://static.markzhengma.com/meal.jpg');
+  background-image: url('https://static.eileen-yu.com/meal.jpg');
   height: calc(100vh - 56px);
   transition: height 0.5s;
   max-width: 800px;
@@ -429,37 +429,37 @@
 }
 
 .relax {
-  background-image: url("https://static.markzhengma.com/icon/relax.png");
+  background-image: url("https://static.eileen-yu.com/icon/relax.png");
 }
 .icon-email {
-  background-image: url("https://static.markzhengma.com/icon/email.png");
+  background-image: url("https://static.eileen-yu.com/icon/email.png");
 }
 .icon-youtubesmall {
-  background-image: url("https://static.markzhengma.com/icon/youtubesmall.png");
+  background-image: url("https://static.eileen-yu.com/icon/youtubesmall.png");
 }
 .icon-youtube {
-  background-image: url("https://static.markzhengma.com/icon/youtube.png");
+  background-image: url("https://static.eileen-yu.com/icon/youtube.png");
 }
 .icon-bili {
-  background-image: url("https://static.markzhengma.com/icon/bili.png");
+  background-image: url("https://static.eileen-yu.com/icon/bili.png");
 }
 .icon-bilismall {
-  background-image: url("https://static.markzhengma.com/icon/bilismall.png");
+  background-image: url("https://static.eileen-yu.com/icon/bilismall.png");
 }
 .icon-instagram {
-  background-image: url("https://static.markzhengma.com/icon/instagram.png");
+  background-image: url("https://static.eileen-yu.com/icon/instagram.png");
 }
 .icon-weibo {
-  background-image: url("https://static.markzhengma.com/icon/weibo.png");
+  background-image: url("https://static.eileen-yu.com/icon/weibo.png");
 }
 .icon-xigua {
-  background-image: url("https://static.markzhengma.com/icon/xigua.png");
+  background-image: url("https://static.eileen-yu.com/icon/xigua.png");
 }
 .icon-wechat {
-  background-image: url("https://static.markzhengma.com/icon/wechat.png");
+  background-image: url("https://static.eileen-yu.com/icon/wechat.png");
 }
 .icon-calendar {
-  background-image: url("https://static.markzhengma.com/icon/calendar.png");
+  background-image: url("https://static.eileen-yu.com/icon/calendar.png");
 }
 
 #sm-display {

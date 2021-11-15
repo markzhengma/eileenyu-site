@@ -9,7 +9,7 @@ export default class Contact extends Component {
     this.state = {
       selectedIcon: 'mail',
       selectedData: {
-        image: 'https://static.markzhengma.com/eileenyu/cover_mail.png',
+        image: 'https://static.eileen-yu.com/eileenyu/cover_mail.png',
         url: 'mailto:comeoneileen12@163.com',
         btnTxt: '发邮件给我',
         btn_bg: '',
@@ -18,7 +18,7 @@ export default class Contact extends Component {
       },
       smData: {
         mail: {
-          image: 'https://static.markzhengma.com/eileenyu/cover_mail.png',
+          image: 'https://static.eileen-yu.com/eileenyu/cover_mail.png',
           url: 'mailto:comeoneileen12@163.com',
           btnTxt: '发邮件给我',
           btn_bg: '',
@@ -26,7 +26,7 @@ export default class Contact extends Component {
           disabled: false
         },
         yt: {
-          image: 'https://static.markzhengma.com/eileenyu/cover_yt.png',
+          image: 'https://static.eileen-yu.com/eileenyu/cover_yt.png',
           url: 'https://www.youtube.com/c/EileenYu?sub_confirmation=1',
           btnTxt: '打开YouTube',
           btn_bg: '',
@@ -34,7 +34,7 @@ export default class Contact extends Component {
           disabled: false
         },
         bili: {
-          image: 'https://static.markzhengma.com/eileenyu/cover_bili.png',
+          image: 'https://static.eileen-yu.com/eileenyu/cover_bili.png',
           url: 'https://space.bilibili.com/344135105',
           btnTxt: '打开Bilibili',
           btn_bg: '',
@@ -42,7 +42,7 @@ export default class Contact extends Component {
           disabled: false
         },
         ins: {
-          image: 'https://static.markzhengma.com/eileenyu/cover_ins.png',
+          image: 'https://static.eileen-yu.com/eileenyu/cover_ins.png',
           url: 'https://www.instagram.com/eileenismart',
           btnTxt: '打开Instagram',
           btn_bg: '',
@@ -50,7 +50,7 @@ export default class Contact extends Component {
           disabled: false
         },
         wb: {
-          image: 'https://static.markzhengma.com/eileenyu/cover_wb.png',
+          image: 'https://static.eileen-yu.com/eileenyu/cover_wb.png',
           url: 'https://www.weibo.com/p/1005052913443311/home',
           btnTxt: '打开微博',
           btn_bg: '',
@@ -58,7 +58,7 @@ export default class Contact extends Component {
           disabled: false
         },
         xigua: {
-          image: 'https://static.markzhengma.com/eileenyu/cover_xigua.png',
+          image: 'https://static.eileen-yu.com/eileenyu/cover_xigua.png',
           url: 'https://www.ixigua.com/home/3474099493142808',
           btnTxt: '打开西瓜视频',
           btn_bg: '',
@@ -66,7 +66,7 @@ export default class Contact extends Component {
           disabled: false
         },
         wechat: {
-          image: 'https://static.markzhengma.com/eileenyu/cover_wechat.png',
+          image: 'https://static.eileen-yu.com/eileenyu/cover_wechat.png',
           url: '',
           btnTxt: '扫描二维码看微信公众号',
           btn_bg: '',
@@ -93,7 +93,7 @@ export default class Contact extends Component {
     //   <Popover bsPrefix="popover-contact" style={{ margin: 0 }}>
     //     <Popover.Title as="h3">Wechat Articles</Popover.Title>
     //     <Popover.Content bsPrefix="popover-contact">
-    //       <Image src="https://static.markzhengma.com/qr_wechat.jpg" />
+    //       <Image src="https://static.eileen-yu.com/qr_wechat.jpg" />
     //     </Popover.Content>
     //   </Popover>
     // );

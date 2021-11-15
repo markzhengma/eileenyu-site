@@ -6,7 +6,7 @@ export default class Construction extends Component {
     return (
       <div className="construction-page flex-hc-vc">
         <div className="spacer"></div>
-        <img src="https://static.markzhengma.com/construction.png" alt="img" style={{width: '100%'}}/>
+        <img src="https://static.eileen-yu.com/construction.png" alt="img" style={{width: '100%'}}/>
         <Button 
           id="construction-btn" 
           variant="danger"
