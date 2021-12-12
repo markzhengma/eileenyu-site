@@ -409,7 +409,7 @@ export default class ProgramSingle extends Component {
   };
 
   async componentDidMount(){
-    const programRes = await axios.get(`https://api.eileenyu.com/calendar/single/${this.props.id}`);
+    const programRes = await axios.get(`https://api.eileen-yu.com/calendar/single/${this.props.id}`);
     const programData = programRes.data.data;
     
     this.setState({
