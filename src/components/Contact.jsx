@@ -206,7 +206,7 @@ export default class Contact extends Component {
                 href="http://beian.miit.gov.cn" 
                 style={{display:'inline-block',textDecoration: 'none', height:'20px', lineHeight:'20px'}}>
                 <p style={{float:'left',height:'20px',lineHeight:'20px',margin: '0px 0px 0px 5px', color:'#939393'}}>
-                  京ICP备20002341号-3
+                  京ICP备2021034872号-1	
                 </p>
               </a>
             </Navbar.Brand>
