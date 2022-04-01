@@ -47,6 +47,12 @@ export default class Header extends Component {
               训练计划
             </Nav.Link>
             <Nav.Link 
+              eventKey = 'faq'
+              onClick = {() => this.props.scrollToElement('faq-spacer')}
+            >
+              FAQ
+            </Nav.Link>
+            <Nav.Link 
               eventKey = 'contact'
               onClick = {() => this.props.scrollToElement('contact-spacer')}
             >

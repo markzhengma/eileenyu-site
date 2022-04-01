@@ -16,6 +16,7 @@ import ProgramSingle from './components/ProgramSingle';
 import Login from './components/Login';
 import Register from './components/Register';
 import Construction from './components/Construction';
+import FAQ from './components/FAQ';
 
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -152,6 +153,7 @@ export default class App extends Component{
                 component={ Construction }
               />
             </Switch>
+            <FAQ/>
             <Contact/>
           </div>
         </ScrollToTop>

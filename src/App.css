@@ -360,6 +360,33 @@
   color: rgb(180, 180, 180);
 }
 
+/* faq section */
+
+.faq-list{
+  max-width: 1140px;
+  width: 90%;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 4px 4px 10px rgb(209, 209, 209);
+  color: #5a5a5a;
+}
+
+.faq-list-single-header button {
+  border: none;
+  background-color: white;
+  color:rgb(87, 87, 87);
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  padding: 12px 24px 12px 24px;
+  background-image: linear-gradient(to right,rgb(231, 231, 231), white);
+}
+
+.faq-list-single-body {
+  padding: 4px 30px 12px 30px;
+  font-size: 18px;
+}
+
 /* contact section */
 
 #footer-navbar-collapse {

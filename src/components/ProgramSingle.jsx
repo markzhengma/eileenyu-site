@@ -514,7 +514,7 @@ export default class ProgramSingle extends Component {
                     ? day.list.map(program => {
                         return (
                           <LazyLoad
-                            key = {day + program.vid}
+                            key = {day + program.vid + day.list.indexOf(program)}
                           >
                             <div className="program-single-box-wrapper">
                               <div 
