@@ -27,7 +27,7 @@
 
 .App {
   font-family: Arial;
-  font-size: 18px;
+  font-size: 14px;
   background-color: #f8f9fa;
   min-height: 100vh;
 }
@@ -103,7 +103,7 @@
   padding: 20px;
   color: #5a5a5a;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #login-box-btngroup {
@@ -117,7 +117,7 @@
   padding: 20px;
   color: #5a5a5a;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   min-width: 300px;
 }
 
@@ -171,7 +171,8 @@
   align-items: center;
 
   color: white;
-  font-size: 24px;
+  font-size: 22px;
+  line-height: 34px;
   font-weight: 600;
 }
 
@@ -229,7 +230,7 @@
 }
 
 .title-section {
-  font-size: 20px;
+  font-size: 16px;
   margin: auto;
   margin: 0 16px;
   width: fit-content;
@@ -328,11 +329,13 @@
 .program-list-single-info {
   padding: 30px 10px 10px 10px;
   color: #5a5a5a;
+  width: 100%;
 }
 
 .program-list-single-info h3 {
   width: 100%;
   font-weight: 600;
+  font-size: 22px;
   border-bottom: rgb(214, 214, 214) solid 2px;
 }
 
@@ -345,7 +348,7 @@
   background-color: #28a745;
   color: white;
   padding: 1px 3px;
-  font-size: small;
+  font-size: 12px;
   border-radius: 2px;
 }
 
@@ -354,7 +357,7 @@
 }
 
 .program-list-single-span {
-  font-size: small;
+  font-size: 12px;
   font-weight: 600;
   width: 100%;
   color: rgb(180, 180, 180);
@@ -376,6 +379,7 @@
   background-color: white;
   color:rgb(87, 87, 87);
   font-weight: 600;
+  font-size: 16px;
   width: 100%;
   text-align: left;
   padding: 12px 24px 12px 24px;
@@ -384,7 +388,8 @@
 
 .faq-list-single-body {
   padding: 4px 30px 12px 30px;
-  font-size: 18px;
+  line-height: 24px;
+  font-size: 14px;
 }
 
 /* contact section */
@@ -441,8 +446,9 @@
 }
 
 .icon-small {
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
+  margin-bottom: 3px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -563,8 +569,9 @@
 }
 
 .program-single-title {
-  font-size: 34px;
+  font-size: 22px;
   font-weight: 600;
+  margin-bottom: 20px;
   border-bottom: solid white 2px;
 }
 
@@ -620,7 +627,11 @@
   display: flex;
   align-items: center;
   color: rgb(87, 87, 87);
-  font-size: 20px;
+  font-size: 16px;
+}
+
+.program-single-detail {
+  font-size: 12px;
 }
 
 .program-single-day-title-txt {
@@ -629,7 +640,7 @@
 
 .program-single-day-detail {
   font-weight: 800;
-  padding-left: 15px;
+  padding-left: 8px;
 }
 
 .program-single-day-list {
@@ -690,7 +701,7 @@
   /* height: 100%; */
   width: 100%;
   background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7));
-  font-size: 16px;
+  font-size: 14px;
   padding: 6px;
   text-align: end;
 }
@@ -707,10 +718,10 @@
 }
 
 .icon-btn-mobile {
-  height: 25px;
+  height: 34px;
   width: 50%;
   background-position: center;
-  background-size: auto 18px;
+  background-size: auto 14px;
   background-repeat: no-repeat;
   /* background-color: rgba(0, 0, 0, 0.3); */
 }
@@ -760,7 +771,7 @@
 
 @media (min-width: 540px) {
   .App {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   #home-cover-title {
@@ -768,7 +779,8 @@
     position: static;
     background-color: #f8f9fa;
     color: #5a5a5a;
-    font-size: 32px;
+    font-size: 22px;
+    line-height: 36px;
   }
 
   #home-cover-img {
