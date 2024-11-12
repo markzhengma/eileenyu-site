@@ -189,24 +189,12 @@ export default class Contact extends Component {
                     © 2021 Eileen Yu
                   </p>
               </a>
-              {/* <a target="_blank" 
-                rel="noopener noreferrer"
-                href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=15070202000140" 
-                style={{display:'inline-block',textDecoration: 'none', height:'20px', lineHeight:'20px'}}>
-                <img 
-                  src={require('../images/beian_2.png')} 
-                  alt=""
-                  style={{float:'left'}}/>
-                <p style={{float:'left',height:'20px',lineHeight:'20px',margin: '0px 0px 0px 5px', color:'#939393'}}>
-                  蒙公网安备 15070202000140号
-                </p>
-              </a> */}
               <a target="_blank" 
                 rel="noopener noreferrer"
                 href="http://beian.miit.gov.cn" 
                 style={{display:'inline-block',textDecoration: 'none', height:'20px', lineHeight:'20px'}}>
                 <p style={{float:'left',height:'20px',lineHeight:'20px',margin: '0px 0px 0px 5px', color:'#939393'}}>
-                  京ICP备2021034872号-1	
+                  沪ICP备2024096456号-1
                 </p>
               </a>
             </Navbar.Brand>

@@ -161,7 +161,7 @@
 
 #home-cover-title {
   height: calc(100vh - 56px);
-  padding: 20px;
+  padding: 60px;
   width: 100%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.2);
@@ -369,27 +369,36 @@
   max-width: 1140px;
   width: 90%;
   margin-top: 20px;
-  background-color: white;
+  /* background-color: white; */
+  background-color: (to right,grey, white);
   box-shadow: 4px 4px 10px rgb(209, 209, 209);
   color: #5a5a5a;
 }
 
+.faq-list-single-header {
+  margin-bottom: 0;
+  margin-top: 2px;
+}
+
 .faq-list-single-header button {
   border: none;
-  background-color: white;
   color:rgb(87, 87, 87);
   font-weight: 600;
   font-size: 16px;
   width: 100%;
   text-align: left;
-  padding: 12px 24px 12px 24px;
-  background-image: linear-gradient(to right,rgb(231, 231, 231), white);
+  padding: 12px 24px;
+  background-color: rgb(246, 240, 218);
+  /* background-image: linear-gradient(to top,rgb(246, 240, 218), white); */
 }
 
 .faq-list-single-body {
-  padding: 4px 30px 12px 30px;
+  padding: 8px 30px 16px 30px;
   line-height: 24px;
   font-size: 14px;
+  /* background-color: white; */
+  background-image: linear-gradient(to bottom,rgb(246, 240, 218), white);
+
 }
 
 /* contact section */
@@ -607,11 +616,11 @@
 
 .program-single-day-dot {
   position: absolute;
-  height: 10px;
-  width: 10px;
+  height: 8px;
+  width: 8px;
   background-color: rgb(87, 87, 87);
-  left: -16px;
-  top: 36px;
+  left: -15px;
+  top: 30px;
   border-radius: 50%;
 }
 
@@ -702,7 +711,7 @@
   width: 100%;
   background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7));
   font-size: 14px;
-  padding: 6px;
+  padding: 6px 12px;
   text-align: end;
 }
 
